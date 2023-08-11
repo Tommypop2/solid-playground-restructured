@@ -12,6 +12,13 @@ patchedDependencies:
 importers:
 
   .:
+    dependencies:
+      prettier:
+        specifier: ^3.0.0
+        version: 3.0.0
+      prettier-plugin-tailwindcss:
+        specifier: ^0.4.1
+        version: 0.4.1(prettier@3.0.0)
     devDependencies:
       '@changesets/cli':
         specifier: 2.26.2
@@ -46,6 +53,9 @@ importers:
       solid-js:
         specifier: 1.7.8
         version: 1.7.8
+      solid-repl:
+        specifier: workspace:*
+        version: link:../solid-repl
     devDependencies:
       '@amoutonbrady/lz-string':
         specifier: ^0.1.0
@@ -3146,7 +3156,6 @@ packages:
         optional: true
     dependencies:
       prettier: 3.0.0
-    dev: true
 
   /prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}

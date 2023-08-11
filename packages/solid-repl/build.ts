@@ -9,7 +9,7 @@ build({
 		"./repl/linter.ts",
 		"./repl/main.css",
 	],
-	outdir: "./lib",
+	outdir: "./dist",
 	minify: true,
 	bundle: true,
 	external: [
@@ -24,14 +24,14 @@ build({
 	},
 }).then(() => {
 	const unoCSS_build = readFileSync("./uno.css");
-	const generated_bundle = readFileSync("./lib/main.css");
+	const generated_bundle = readFileSync("./dist/main.css");
 
 	const output_bundle = Buffer.concat([generated_bundle, unoCSS_build]);
 
-	writeFileSync("./lib/bundle.css", output_bundle);
+	writeFileSync("./dist/bundle.css", output_bundle);
 
 	unlinkSync("./uno.css");
-	unlinkSync("./lib/main.css");
+	unlinkSync("./dist/main.css");
 
-	copyFileSync("./src/types.d.ts", "./lib/types.d.ts");
+	copyFileSync("./src/types.d.ts", "./dist/types.d.ts");
 });
